@@ -1,0 +1,11 @@
+.app-grid {
+  background: $white-grey;
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, calc(100% / 12));
+  gap: 20px;
+
+  &__container {
+    grid-column: 2/11;
+  }
+}
