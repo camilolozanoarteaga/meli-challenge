@@ -1,1 +1,23 @@
-<p>product-card works!</p>
+<section class="card">
+  <aside>
+    <figure class="card__figure">
+      <img
+        class="card__image"
+        src="https://i.blogs.es/187a45/iphone-11-pro-02/840_560.jpg"
+        alt="{{ product.description }}"
+        title="{{ product.name }}"
+      />
+    </figure>
+  </aside>
+  <body class="card__body">
+    <div class="card__description">
+      <h1 class="card__title">
+        {{ product.price | currency: '$':'symbol':'1.2-4' }}
+      </h1>
+      <p class="card__info">{{ product.description }}</p>
+    </div>
+    <div class="card__aditional-info">
+      <div>{{ product.city }}</div>
+    </div>
+  </body>
+</section>
