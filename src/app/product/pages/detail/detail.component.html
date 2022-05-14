@@ -1,1 +1,41 @@
-<p>detail works!</p>
+<div class="container-detail">
+  <div class="buy-detail">
+    <section class="product">
+      <figure>
+        <img
+          class="buy-detail__image"
+          src="https://i.blogs.es/187a45/iphone-11-pro-02/840_560.jpg"
+          alt="product.description"
+          title="product.name"
+        />
+      </figure>
+    </section>
+
+    <section class="detail">
+      <span class="buy-detail__sales">
+        Nuevo - {{ detailProduct.totalSales }} vendidos</span
+      >
+      <strong class="buy-detail__description">
+        {{ detailProduct.description }}
+      </strong>
+      <span class="buy-detail__price">
+        {{ detailProduct.price | currency: '$':'symbol':'1.3' }}
+      </span>
+
+      <button class="button-blue">Comprar</button>
+    </section>
+  </div>
+
+  <div class="description">
+    <h1 class="description__title">Descripción del producto</h1>
+    <p class="description__body">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </p>
+  </div>
+</div>
