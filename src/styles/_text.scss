@@ -1,0 +1,60 @@
+.description {
+  background: white;
+  padding: 32px;
+
+  &__title {
+    font-weight: 100;
+    color: $dark-gray;
+    font-size: 28px;
+    padding-bottom: 32px;
+  }
+  &__body {
+    color: $light-grey;
+    font-size: 16px;
+    font-weight: 100;
+    width: 70%;
+  }
+}
+
+.buy-detail {
+  background: white;
+  width: 100%;
+  display: flex;
+  padding-top: 31px;
+
+  .product {
+    width: 71%;
+    text-align: center;
+  }
+  .detail {
+    width: 29%;
+  }
+
+  &__image {
+    width: 680px;
+    height: 680px;
+  }
+
+  &__sales,
+  &__description,
+  &__price {
+    display: block;
+  }
+
+  &__sales {
+    color: $dark-gray;
+    font-size: 14px;
+    padding-bottom: 16px;
+  }
+  &__description {
+    color: $dark-gray;
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+  &__price {
+    color: $dark-gray;
+    font-size: 46px;
+    font-weight: 100;
+    padding-bottom: 32px;
+  }
+}
