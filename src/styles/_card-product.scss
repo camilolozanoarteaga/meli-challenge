@@ -6,14 +6,14 @@
     width: 180px;
     height: 180px;
     border-radius: 4px;
-    margin: 16px;
+    margin: $space-16;
   }
 
   &__body {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding-top: 16px;
+    padding-top: $space-16;
   }
 
   &__descripxion {
@@ -29,11 +29,11 @@
   }
 
   &__title {
-    font-size: 24px;
+    font-size: $font-size-24;
     color: $dark-gray;
   }
   &__info {
-    font-size: 18px;
+    font-size: $font-size-18;
     color: $dark-gray;
   }
 
@@ -43,7 +43,7 @@
     justify-content: center;
     width: 50%;
     color: $light-grey;
-    font-size: 12px;
+    font-size: $font-size-12;
     padding-left: 8em;
   }
 }
