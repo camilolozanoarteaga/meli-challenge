@@ -1,16 +1,16 @@
 .description {
   background: white;
-  padding: 32px;
+  padding: $space-32;
 
   &__title {
     font-weight: 100;
     color: $dark-gray;
-    font-size: 28px;
-    padding-bottom: 32px;
+    font-size: $font-size-28;
+    padding-bottom: $space-32;
   }
   &__body {
     color: $light-grey;
-    font-size: 16px;
+    font-size: $font-size-16;
     font-weight: 100;
     width: 70%;
   }
@@ -20,7 +20,7 @@
   background: white;
   width: 100%;
   display: flex;
-  padding-top: 31px;
+  padding-top: 31px; //todo
 
   .product {
     width: 71%;
@@ -43,18 +43,18 @@
 
   &__sales {
     color: $dark-gray;
-    font-size: 14px;
-    padding-bottom: 16px;
+    font-size: $font-size-14;
+    padding-bottom: $font-size-16;
   }
   &__description {
     color: $dark-gray;
-    font-size: 24px;
-    margin-bottom: 32px;
+    font-size: $font-size-24;
+    margin-bottom: $space-32;
   }
   &__price {
     color: $dark-gray;
-    font-size: 46px;
+    font-size: $font-size-46;
     font-weight: 100;
-    padding-bottom: 32px;
+    padding-bottom: $space-32;
   }
 }
