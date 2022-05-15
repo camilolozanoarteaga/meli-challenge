@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ProductCardModel } from '@core-model/product-card.model';
 
 @Component({
@@ -10,7 +11,9 @@ export class ListComponent implements OnInit {
 
   products: ProductCardModel[];
 
-  constructor() { }
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('Lista de productos');
+  }
 
   ngOnInit(): void {
     this.products = [

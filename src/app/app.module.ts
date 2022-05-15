@@ -5,6 +5,7 @@ import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     RouterModule.forRoot(AppRoutes),
-    CoreModule
+    CoreModule,
+    SharedModule
   ],
   exports: [
     CoreModule

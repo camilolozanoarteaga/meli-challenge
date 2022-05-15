@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ProductDetailModel } from '@core-model/product-detail.model';
 
 @Component({
@@ -10,7 +11,9 @@ export class DetailComponent implements OnInit {
 
   detailProduct: ProductDetailModel;
 
-  constructor() { }
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('Detalle');
+  }
 
   ngOnInit(): void {
     this.detailProduct = {
