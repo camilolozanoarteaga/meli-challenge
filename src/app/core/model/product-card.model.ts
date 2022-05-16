@@ -1,5 +1,5 @@
 export interface ProductCardModel {
-  name: string;
+  id: string;
   description: string;
   price: number;
   city: string;

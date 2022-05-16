@@ -8,9 +8,11 @@
       class="search-bar__input"
       placeholder="Nunca dejes de buscar"
       type="text"
+      [(ngModel)]="searchText"
+      (keyup.enter)="onSearch()"
     />
 
-    <div class="search-bar__search">
+    <div class="search-bar__search" (click)="onSearch()">
       <div>
         <figure>
           <img src="assets/images/search.png" alt="logo" />

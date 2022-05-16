@@ -1,16 +1,15 @@
 <section class="card">
-  <aside>
+  <aside (click)="getDescription()">
     <figure class="card__figure">
       <img
         class="card__image"
         src="https://i.blogs.es/187a45/iphone-11-pro-02/840_560.jpg"
         alt="{{ product.description }}"
-        title="{{ product.name }}"
       />
     </figure>
   </aside>
   <body class="card__body">
-    <div class="card__description">
+    <div (click)="getDescription()" class="card__description">
       <h1 class="card__title">
         {{ product.price | currency: '$':'symbol':'1.2-4' }}
       </h1>

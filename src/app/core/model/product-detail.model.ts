@@ -1,6 +1,6 @@
 export interface ProductDetailModel {
   totalSales: number;
-  isNew: boolean;
+  isNew: string;
   description: string;
   price: number;
 }
