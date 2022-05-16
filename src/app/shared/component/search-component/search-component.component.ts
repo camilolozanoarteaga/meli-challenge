@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { StateSearchService } from '@core-service/state-search.service';
 
 @Component({
   selector: 'app-search-component',
