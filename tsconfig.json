@@ -27,8 +27,8 @@
       "@core-model/*": [
         "./src/app/core/model/*"
       ],
-      "@environment/*": [
-        "environments/*"
+      "@core-service/*": [
+        "./src/app/core/service/*"
       ],
     },
   },

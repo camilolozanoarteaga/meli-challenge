@@ -1,4 +1,4 @@
-<div class="buy-detail">
+<div *ngIf="product" class="buy-detail">
   <section class="product">
     <figure>
       <img
@@ -12,7 +12,7 @@
 
   <section class="detail">
     <span class="buy-detail__sales">
-      Nuevo - {{ product.totalSales }} vendidos</span
+      {{ product.isNew }} - {{ product.totalSales }} vendidos</span
     >
     <strong class="buy-detail__description">
       {{ product.description }}

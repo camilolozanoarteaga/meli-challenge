@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { StateSearchService } from '@core-service/state-search.service';
 
 @Component({
   selector: 'app-search-component',
   templateUrl: './search-component.component.html',
-  styleUrls: ['./search-component.component.scss']
+  styleUrls: ['./search-component.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchComponentComponent implements OnInit {
+export class SearchComponentComponent {
 
-  constructor() { }
+  searchText: string;
 
-  ngOnInit(): void {
+  constructor(private router: Router) { }
+
+  onSearch() {
+    this.router.navigate(['/items'], { queryParams: { query: this.searchText.trim() } });
   }
 
 }
