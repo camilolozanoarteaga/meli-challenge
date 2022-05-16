@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { ProductCardModel } from '@core-model/product-card.model';
 import { ProductListModel } from '@core-model/product-list.model';
 import { ProductService } from '@core-service/product.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -22,7 +22,6 @@ export class ListComponent implements OnInit, OnDestroy {
     private titleService: Title,
     private route: ActivatedRoute,
     private productService: ProductService,
-
   ) {
     this.titleService.setTitle('Lista de productos');
   }
