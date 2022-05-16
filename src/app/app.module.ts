@@ -12,8 +12,10 @@ import { SharedModule } from './shared/shared.module';
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot(AppRoutes),
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    RouterModule.forRoot(AppRoutes, {
+    initialNavigation: 'enabledBlocking'
+}),
     CoreModule,
     SharedModule
   ],
