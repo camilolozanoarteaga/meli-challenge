@@ -1,7 +1,8 @@
 <section class="card">
-  <aside (click)="getDescription()">
+  <aside data-test-id="card_product_clic" (click)="getDescription()">
     <figure class="card__figure">
       <img
+        data-test-id="card-image"
         class="card__image"
         src="https://i.blogs.es/187a45/iphone-11-pro-02/840_560.jpg"
         [alt]="product.description"
@@ -10,12 +11,14 @@
   </aside>
   <body class="card__content">
     <div (click)="getDescription()" class="card__description">
-      <h1 class="card__title">
+      <h1 data-test-id="card_product_title" class="card__title">
         {{ product.price | currency: '$':'symbol':'1.2-4' }}
       </h1>
-      <p class="card__info">{{ product.description }}</p>
+      <p data-test-id="card_product_info" class="card__info">
+        {{ product.description }}
+      </p>
     </div>
-    <div class="card__aditional-info">
+    <div data-test-id="card_product_ditional-info" class="card__aditional-info">
       <div>{{ product.city }}</div>
     </div>
   </body>
