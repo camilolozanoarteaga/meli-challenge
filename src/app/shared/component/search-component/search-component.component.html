@@ -5,6 +5,7 @@
     </figure>
 
     <input
+      data-test-id="search_input"
       class="search-bar__input"
       placeholder="Nunca dejes de buscar"
       type="text"
@@ -12,7 +13,11 @@
       (keyup.enter)="onSearch()"
     />
 
-    <div class="search-bar__search" (click)="onSearch()">
+    <div
+      data-test-id="search_clic"
+      class="search-bar__search"
+      (click)="onSearch()"
+    >
       <div>
         <figure>
           <img src="assets/images/search.png" alt="logo" />

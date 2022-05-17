@@ -2,6 +2,7 @@
   <section class="product">
     <figure>
       <img
+        data-test-id="buy-detail-image"
         class="buy-detail__image"
         src="https://i.blogs.es/187a45/iphone-11-pro-02/840_560.jpg"
         alt="product.description"
@@ -11,16 +12,19 @@
   </section>
 
   <section class="detail">
-    <span class="buy-detail__sales">
+    <span data-test-id="buy-detail-sales" class="buy-detail__sales">
       {{ product.isNew }} - {{ product.totalSales }} vendidos</span
     >
-    <strong class="buy-detail__description">
+    <strong
+      data-test-id="buy-detail-description"
+      class="buy-detail__description"
+    >
       {{ product.description }}
     </strong>
-    <span class="buy-detail__price">
+    <span data-test-id="buy-detail-price" class="buy-detail__price">
       {{ product.price | currency: '$':'symbol':'1.3' }}
     </span>
 
-    <button class="button-blue">Comprar</button>
+    <button data-test-id="button-blue" class="button-blue">Comprar</button>
   </section>
 </div>
