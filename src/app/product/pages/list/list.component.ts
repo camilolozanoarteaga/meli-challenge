@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { ProductCardModel } from '@core-model/product-card.model';
@@ -17,6 +17,7 @@ export class ListComponent implements OnInit, OnDestroy {
   products: ProductCardModel[];
   textSearch: string;
   queryParamsSub$: Subscription;
+  productsSub$: Subscription;
 
   constructor(
     private titleService: Title,
@@ -27,7 +28,7 @@ export class ListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.queryParamsSub$ = this.route.queryParams.subscribe(params => {
+    this.queryParamsSub$ = this.route.queryParams.subscribe((params: Params) => {
       if (params['query']) {
         this.searchList(params['query']);
       }
@@ -35,24 +36,30 @@ export class ListComponent implements OnInit, OnDestroy {
   }
 
   searchList(query: string): void {
-    this.productService.getProductsList(query).subscribe((data: ProductListModel) => {
-      const productos = data.items.map((item) => {
-        return {
-          id: item.id,
-          description: item.title,
-          city: item.address,
-          isShipping: item.freeShipping,
-          price: item.price.amount
-        }
-      });
-
-      this.products = productos;
+    this.productsSub$ = this.productService.getProductsList(query).subscribe((data: ProductListModel) => {
+      this.products = this.sortProductList(data);
     })
   }
 
+  sortProductList(data: ProductListModel): ProductCardModel[] {
+    return data.items.map((item) => {
+      return {
+        id: item.id,
+        description: item.title,
+        city: item.address,
+        isShipping: item.freeShipping,
+        price: item.price.amount
+      }
+    });
+  }
+
+
   ngOnDestroy(): void {
     if (this.queryParamsSub$) {
-      this.queryParamsSub$.unsubscribe()
+      this.queryParamsSub$.unsubscribe();
+    }
+    if (this.productsSub$) {
+      this.productsSub$.unsubscribe();
     }
   }
 }

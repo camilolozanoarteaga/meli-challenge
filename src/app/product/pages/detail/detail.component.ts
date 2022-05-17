@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 import { ProductDetailModel } from '@core-model/product-detail.model';
 import { Product } from '@core-model/product.model';
 import { ProductService } from '@core-service/product.service';
@@ -15,15 +16,24 @@ export class DetailComponent implements OnInit, OnDestroy {
   detailProduct: ProductDetailModel;
   descriptionProduct: string;
   productSub$: Subscription;
+  paramId: string;
 
-  constructor(private titleService: Title, private productService: ProductService) {
+  constructor(private titleService: Title, private productService: ProductService, private activatedRoute: ActivatedRoute) {
     this.titleService.setTitle('Detalle');
   }
 
   ngOnInit(): void {
-    this.productSub$ = this.productService.getProduct('MLA1133464633').subscribe(response => {
+    this.activatedRoute.params.subscribe(params => {
+      if (params['id']) {
+        this.getDetailData(params['id']);
+      }
+    });
+  }
+
+  getDetailData(idParam: string) {
+    this.productSub$ = this.productService.getProduct(idParam).subscribe(response => {
       this.detailProduct = this.getProductDetail(response);
-      this.descriptionProduct = response.item.description
+      this.descriptionProduct = response.item.description;
     });
   }
 
