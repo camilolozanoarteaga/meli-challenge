@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ProductDetailModel } from '@core-model/product-detail.model';
 
 @Component({
@@ -7,12 +7,8 @@ import { ProductDetailModel } from '@core-model/product-detail.model';
   styleUrls: ['./buy-detail.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BuyDetailComponent implements OnInit {
+export class BuyDetailComponent {
 
   @Input() product: ProductDetailModel;
-
-  constructor() { }
-
-  ngOnInit(): void { }
 
 }

@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponentComponent {
-
   searchText: string;
 
   constructor(private router: Router) { }
@@ -16,5 +15,4 @@ export class SearchComponentComponent {
   onSearch() {
     this.router.navigate(['/items'], { queryParams: { query: this.searchText.trim() } });
   }
-
 }

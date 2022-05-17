@@ -1,5 +1,8 @@
 <div *ngFor="let product of products">
   <div>
-    <app-product-card [product]="product"></app-product-card>
+    <app-product-card
+      data-test-id="app-product-card"
+      [product]="product"
+    ></app-product-card>
   </div>
 </div>
